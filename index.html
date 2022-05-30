@@ -1,243 +1,71 @@
-        <style>
-            :root {
-                /* These variables exist so you can make quick and simple style changes without much CSS knowledge */
-
-                /* applies to all areas */
-                --font-family: sans-serif;
-                --font-size: 14px;
-                --line-height: 1.3em;
-                --font-color: black;
-                --link-color: #A8928A;
-                --link-text-decoration: none;
-
-                /* main content (between sidebars) */
-                --content-padding: 25px;
-                --content-bg-color: #F9F7E7;
-
-                /* header */
-                --header-height: 200px;
-                --header-background: url('https://i.ibb.co/vjQycDB/pwv8weqcvf3412.png');
-                --header-margin-bottom: 0px;
-
-
-                /* sidebar */
-                --sidebar-margin: 10px;
-                --sidebar-width: 200px;
-                --sidebar-padding: 15px;
-                --sidebar-bg-color: #F9F7E7;
-
-                /* footer */
-                --footer-height: 30px;
-                --footer-bg-color: #F9F7E7;
-
-                /* navbar */
-                --navitems-alignment: center;
-                --space-between-navitems: 20px;
-                --navbar-margin-bottom: 10px;
-                --nav-bg-color: #F9F4E1;
-
-                /* container */
-                --container-width: 1000px;
-                --container-bg-color: black;
-
-                /* controls the gap between the content and the footer */
-                --row-gap: 5px;
-
-                /* To add scrollbars to your sidebars, just make the height a px value and change overflow to 'auto' */
-
-                --sidebar-height: 100%;
-                --sidebar-overflow: hidden;
-                --background-color: black;
-            }
-
-            html,
-            body {
-                margin: 0;
-                padding: 0;
-                background-color: var(--background-color);
-                font-family: var(--font-family);
-                font-size: var(--font-size);
-                line-height: var(--line-height);
-                color: var(--font-color);
-            }
-
-            body a {
-                color: var(--link-color);
-                font-weight: bold;
-                text-decoration: var(--link-text-decoration);
-            }
-
-            #main-container {
-                max-width: var(--container-width);
-                margin: 0 auto;
-                background-color: var(--container-bg-color);
-            }
-
-            .flex {
-                display: flex;
-                margin-bottom: var(--row-gap);
-            }
-
-            .content-wrap {
-                margin-top: var(--content-margin-top);
-            }
-
-            #content-container {
-                width: 60%;
-                margin-bottom: var(--row-gap);
-                background-color: var(--content-bg-color);
-            }
-
-            #left-sidebar {
-                width: var(--sidebar-width);
-                margin-right: var(--sidebar-margin);
-                margin-bottom: var(--row-gap);
-                height: var(--sidebar-height);
-                overflow: var(--sidebar-overflow);
-                background-color: var(--sidebar-bg-color);
-            }
-
-            #right-sidebar {
-                width: var(--sidebar-width);
-                margin-left: var(--sidebar-margin);
-                margin-bottom: var(--row-gap);
-                height: var(--sidebar-height);
-                overflow: var(--sidebar-overflow);
-                background-color: var(--sidebar-bg-color);
-            }
-
-            #header-contained {
-                height: var(--header-height);
-                margin-bottom: var(--header-margin-bottom);
-                background-image: var(--header-background);
-                background-position: center center;
-            }
-
-            #footer {
-                height: var(--footer-height);
-                text-align: center;
-                color: var(--font-color);
-                background-color: var(--footer-bg-color);
-            }
-
-            #header-full {
-                display: none;
-                height: var(--header-height);
-                margin-bottom: var(--header-margin-bottom);
-                background-image: var(--header-background);
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: auto 280px;
-                background-color: #F9F4E1;
-            }
-
-            #navbar-contained {
-                margin-bottom: var(--row-gap)
-            }
-
-            #navbar-full {
-                display: none;
-            }
-
-            .nav {
-                margin-left: 0;
-                text-align: var(--navitems-alignment);
-                margin-top: 0;
-                margin-bottom: var(--navbar-margin-bottom);
-                padding-top: 1em;
-                padding-bottom: 1em;
-                background-color: var(--nav-bg-color);
-
-            }
-
-            .nav li {
-                display: inline-block;
-                padding-right: var(--space-between-navitems);
-            }
-
-            .wrapper {
-                padding: var(--content-padding);
-                padding-top: var(--sidebar-padding);
-            }
-
-            .sidebar-wrapper {
-                padding: var(--sidebar-padding);
-                height: var(--sidebar-height);
-                overflow: var(--sidebar-overflow);
-            }
-
-            .footer-wrapper {
-                padding: 5px;
-            }
-
-            /* To keep your site RESPONSIVE, make sure this variable matches the width for --container-width UNLESS --container-width is 100% - if it's 100%, you'll need to manually input a breakpoint. */
-            @media only screen and (max-width: 800px) {
-                .flex {
-                    flex-wrap: wrap;
-                }
-
-                #left-sidebar {
-                    width: 100%;
-                    display: block;
-                    order: 2;
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-
-                #right-sidebar {
-                    width: 100%;
-                    display: block;
-                    order: 3;
-                    margin-left: 0;
-                }
-
-                #content-container {
-                    width: 100%;
-                    display: block;
-                    order: 1;
-                    margin-bottom: 10px;
-                }
-
-            }
-        </style>
-        <div id="header-full" style="display: block;"></div>
-        <div id="navbar-full" style="display: block;">
+<!DOCTYPE html>
+<html lang ='en'>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title> Webring | Gammageek</title>
+    </head>
+    <div id="header-full" style="display: block;"></div>
+    <div id="navbar-full" style="display: block;">
+        <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Socials</a></li>
+            <li><a href="#">Webring</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div id="main-container">
+        <div id="header-contained" style="display: none;"></div>
+        <div id="navbar-contained" style="display: none;">
             <ul class="nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Socials</a></li>
-                <li><a href="#">Webring</a></li>
+                <li><a href="#">Ring</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
-        <div id="main-container">
-            <div id="header-contained" style="display: none;"></div>
-            <div id="navbar-contained" style="display: none;">
-                <ul class="nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Socials</a></li>
-                    <li><a href="#">Ring</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div>
-            <div class="content-wrap flex alignment">
-                <div id="content-container" style="flex-grow: 1;">
-                    <div class="wrapper">
-                        Sup People. Its chill here with some cat with its mouth in a mug. Enjoy
-                    </div>
-                </div>
-                <div id="right-sidebar" style="display: block;">
-                    <div class="sidebar-wrapper">
-                        Hopefully there will be cat pics here uwu
-                    </div>
+        <div class="content-wrap flex alignment">
+            <div id="content-container" style="flex-grow: 1;">
+                <div class="wrapper">
+                    Sup People. Its chill here with a cat with its mouth in a mug. Enjoy
                 </div>
             </div>
-            <div id="footer" style="display: block;">
-                <div class="footer-wrapper">
-                    This the footer. Here u'll find some paw pics of cats.
+            <div id="right-sidebar" style="display: block;">
+                <h2>
+                    { Cute cat pics uwu}
+                </h2>
+                <div class="sidebar-wrapper">
+                    <!-- Hopefully there will be cat pics here uwu -->
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1597626133663-53df9633b799",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1617112513579-d8755a2c4693",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1506755855567-92ff770e8d00",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1604675223954-b1aabd668078",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1566847438217-76e82d383f84",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1545249390-6bdfa286032f",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1572171572779-e93ec53b8024",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1586042091284-bd35c8c1d917",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1587723958656-ee042cc565a1",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1612531822780-ce3193485c08",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1572590285030-0ae6a4715671",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1617696448256-e92b5761bea3",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1622810232121-f0aca4a230bb",>
+                    <img class="sidebar-image" src="https://images.unsplash.com/photo-1577023311546-cdc07a8454d9",>
+
                 </div>
-                    <p><a href="#">Woodiewood2130 | Gammageek</a></p>
+                
             </div>
         </div>
+        <div id="footer" style="display: block;">
+            <div class="footer-wrapper">
+                This the footer. Here u'll find some paw pics of cats.
+            </div>
+                <p><a href="#">Woodiewood2130 | Gammageek</a></p>
+        </div>
+    </div>
+</html>
     
