@@ -102,7 +102,7 @@ body a {
 .socials a{
     text-decoration: none;
     color: #fff;
-    border: 1.1px solid white;
+    border: 1.1px black;
     padding: 5px;
     border-radius: 50%;
 }
@@ -115,6 +115,72 @@ body a {
 
 .socials a:hover i{
     color: aqua;
+    opacity: 1;
+}
+
+   /* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: black;
+    color: white;
+}
+
+.bi {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: black;
+    color: white;
+}
+
+.user{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.user li{
+    margin: 0 10px;
+}
+
+.user a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px black;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.user a i{
+    font-size: 1.5rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.user a:hover i{
+    color: aqua;
+    opacity: 1;
+}
+
+.fa-user {
+    padding: 40px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: black;
+    color: white;
 }
 
 #left-sidebar {
