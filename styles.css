@@ -1,4 +1,4 @@
-:root {
+ :root {
     /* These variables exist so you can make quick and simple style changes without much CSS knowledge */
 
     /* applies to all areas */
@@ -25,9 +25,7 @@
     --sidebar-padding: 15px;
     --sidebar-bg-color: #F9F7E7;
 
-    /* footer */
-    --footer-height: 30px;
-    --footer-bg-color: #F9F7E7;
+   
 
     /* navbar */
     --navitems-alignment: center;
@@ -232,7 +230,7 @@ body a {
 }
 
 #navbar-full {
-    display: none;
+    display: none; 
 }
 
 .nav {
