@@ -1,0 +1,42 @@
+:root {
+    --font-family: 'Arial', sans-serif;
+    --font-color: #333;
+    --background-color: #f4f4f9;
+    --header-bg-color: #222;
+    --header-font-color: #fff;
+    --link-color: #007BFF;
+    --separator-color: #ddd;
+    --project-bg-color: #fff;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.bg-background {
+    background-color: var(--background-color);
+}
+
+.text-font {
+    color: var(--font-color);
+}
+
+.bg-header-bg {
+    background-color: var(--header-bg-color);
+}
+
+.text-header-font {
+    color: var(--header-font-color);
+}
+
+.text-link {
+    color: var(--link-color);
+}
+
+.border-separator {
+    border-color: var(--separator-color);
+}
+
+.bg-project-bg {
+    background-color: var(--project-bg-color);
+}

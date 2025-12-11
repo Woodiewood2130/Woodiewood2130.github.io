@@ -1,302 +1,130 @@
- :root {
-    /* These variables exist so you can make quick and simple style changes without much CSS knowledge */
-
-    /* applies to all areas */
-    --font-family: sans-serif;
-    --font-size: 14px;
-    --line-height: 1.3em;
-    --font-color: black;
-    --link-color: #A8928A;
-    --link-text-decoration: none;
-
-    /* main content (between sidebars) */
-    --content-padding: 25px;
-    --content-bg-color: #F9F7E7;
-
-    /* header */
-    --header-height: 200px;
-    --header-background: url('https://i.ibb.co/vjQycDB/pwv8weqcvf3412.png');
-    --header-margin-bottom: 0px;
-
-
-    /* sidebar */
-    --sidebar-margin: 10px;
-    --sidebar-width: 230px;
-    --sidebar-padding: 15px;
-    --sidebar-bg-color: #F9F7E7;
-
-   
-
-    /* navbar */
-    --navitems-alignment: center;
-    --space-between-navitems: 20px;
-    --navbar-margin-bottom: 10px;
-    --nav-bg-color: #F9F4E1;
-
-    /* container */
-    --container-width: 1000px;
-    --container-bg-color: black;
-
-    /* controls the gap between the content and the footer */
-    --row-gap: 5px;
-
-    /* To add scrollbars to your sidebars, just make the height a px value and change overflow to 'auto' */
-
-    --sidebar-height: 500px;
-    --sidebar-overflow: auto;
-    --background-color: black;
+:root {
+    --font-family: 'Arial', sans-serif;
+    --font-color: #333;
+    --background-color: #4b4b51;
+    --header-bg-color: #222;
+    --header-font-color: #fff;
+    --link-color: #007BFF;
+    --separator-color: #ddd;
+    --project-bg-color: #fff;
+    --project-border-radius: 8px;
+    --project-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-html,
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
     font-family: var(--font-family);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
+    background-color: var(--background-color);
     color: var(--font-color);
-}
-
-body a {
-    color: var(--link-color);
-    font-weight: bold;
-    text-decoration: var(--link-text-decoration);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
 }
 
 #main-container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    background-color: var(--container-bg-color);
-}
-
-.flex {
+    flex: 1; /* Allow the main content to grow and push the footer to the bottom */
     display: flex;
-    margin-bottom: var(--row-gap);
+    flex-direction: column;
+    justify-content: space-between; /* Ensure footer stays at the bottom */
 }
 
-.content-wrap {
-    margin-top: var(--content-margin-top);
+header {
+    text-align: center;
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+    padding: 4rem 0;
 }
 
-#content-container {
-    width: 60%;
-    margin-bottom: var(--row-gap);
-    background-color: var(--content-bg-color);
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
-.socials{
-    list-style: none;
+header .subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex-grow: 1; /* Allow the projects container to grow and fill available space */
+}
+
+.project {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
+    flex-wrap: wrap;
+    background-color: var(--project-bg-color);
+    border-radius: var(--project-border-radius);
+    box-shadow: var(--project-shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
 }
 
-.socials li{
-    margin: 0 10px;
+.project-info {
+    flex: 1;
+    padding: 1.5rem;
 }
 
-.socials a{
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px black;
-    padding: 5px;
-    border-radius: 50%;
-}
-
-.socials a i{
-    font-size: 1.1rem;
-    width: 20px;
-    transition: color .4s ease;
-}
-
-.socials a:hover i{
-    color: aqua;
-    opacity: 1;
-}
-
-   /* Style all font awesome icons */
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    background: black;
-    color: white;
-}
-
-.bi {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    background: black;
-    color: white;
-}
-
-.user{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-
-.user li{
-    margin: 0 10px;
-}
-
-.user a{
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px black;
-    padding: 5px;
-    border-radius: 50%;
-}
-
-.user a i{
-    font-size: 1.5rem;
-    width: 20px;
-    transition: color .4s ease;
-}
-
-.user a:hover i{
-    color: aqua;
-    opacity: 1;
-}
-
-.fa-user {
-    padding: 40px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    background: black;
-    color: white;
-}
-
-#left-sidebar {
-    width: var(--sidebar-width);
-    margin-right: var(--sidebar-margin);
-    margin-bottom: var(--row-gap);
-    height: var(--sidebar-height);
-    overflow: var(--sidebar-overflow);
-    background-color: var(--sidebar-bg-color);
-}
-
-#right-sidebar {
-    width: var(--sidebar-width);
-    margin-left: var(--sidebar-margin);
-    margin-bottom: var(--row-gap);
-    height: var(--sidebar-height);
-    overflow: var(--sidebar-overflow);
-    background-color: var(--sidebar-bg-color);
-}
-
-#header-contained {
-    height: var(--header-height);
-    margin-bottom: var(--header-margin-bottom);
-    background-image: var(--header-background);
-    background-position: center center;
-}
-
-#footer {
-    height: var(--footer-height);
-    text-align: center;
-    color: var(--font-color);
-    background-color: var(--footer-bg-color);
-    /*margin-top: 5px;*/
-}
-
-#header-full {
-    display: none;
-    height: var(--header-height);
-    margin-bottom: var(--header-margin-bottom);
-    background-image: var(--header-background);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto 280px;
-    background-color: #F9F4E1;
-}
-
-#navbar-contained {
-    margin-bottom: var(--row-gap)
-}
-
-#navbar-full {
-    display: none; 
-}
-
-.nav {
-    margin-left: 0;
-    text-align: var(--navitems-alignment);
+.project-info h2 {
     margin-top: 0;
-    margin-bottom: var(--navbar-margin-bottom);
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: var(--nav-bg-color);
-
+    font-size: 1.8rem;
 }
 
-.nav li {
+.project-info .project-description {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.project-info .project-links a {
     display: inline-block;
-    padding-right: var(--space-between-navitems);
+    margin-right: 1rem;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.wrapper {
-    padding: var(--content-padding);
-    padding-top: var(--sidebar-padding);
+.project-info .project-links a:hover {
+    text-decoration: underline;
 }
 
-.sidebar-wrapper {
-    padding: var(--sidebar-padding);
-    height: var(--sidebar-height);
-    overflow: var(--sidebar-overflow);
+.project-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
 }
 
-.sidebar-image{
-    /*background-position: center;*/
-    background-size: contain;
-    max-height: 230px;
-    max-width: 210px;
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--project-border-radius);
 }
 
-
-.footer-wrapper {
-    padding: 5px;
+.separator {
+    border: none;
+    border-top: 2px solid var(--separator-color);
+    margin: 2rem 0;
 }
 
-/* To keep your site RESPONSIVE, make sure this variable matches the width for --container-width UNLESS --container-width is 100% - if it's 100%, you'll need to manually input a breakpoint. */
-@media only screen and (max-width: 800px) {
-    .flex {
-        flex-wrap: wrap;
-    }
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--header-bg-color);
+    color: var(--header-font-color);
+    margin-top: auto; /* Push the footer to the bottom if content is short */
+}
 
-    #left-sidebar {
-        width: 100%;
-        display: block;
-        order: 2;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+footer nav a {
+    margin: 0 1rem;
+    color: var(--header-font-color);
+    text-decoration: none;
+}
 
-    #right-sidebar {
-        width: 100%;
-        display: block;
-        order: 3;
-        margin-left: 0;
-    }
-
-    #content-container {
-        width: 100%;
-        display: block;
-        order: 1;
-        margin-bottom: 10px;
-    }
+footer nav a:hover {
+    text-decoration: underline;
 }
