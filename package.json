@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://woodiewood2130.github.io/Woodiewood2130.github.io",
+  "homepage": "https://woodiewood2130.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
