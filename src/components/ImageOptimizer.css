@@ -1,0 +1,107 @@
+/* Image Optimizer Styles */
+.image-optimizer {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.optimized-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.optimized-image.loaded {
+    opacity: 1;
+}
+
+.image-placeholder,
+.image-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-border-subtle);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.placeholder-icon,
+.error-icon {
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.placeholder-text,
+.error-text {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Performance optimizations */
+.optimized-image {
+    will-change: auto;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 200px;
+}
+
+/* Responsive image container */
+.image-optimizer {
+    aspect-ratio: 16 / 9;
+}
+
+.image-optimizer img {
+    object-fit: cover;
+}
+
+/* Lazy loading indicators */
+.image-optimizer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    animation: shimmer 1.5s infinite;
+    pointer-events: none;
+}
+
+.image-optimizer img.loaded + .image-optimizer::after {
+    display: none;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .image-placeholder {
+    background: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .image-optimizer img {
+        border: 2px solid var(--color-text-primary);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .optimized-image {
+        transition: none;
+    }
+    
+    .image-optimizer::after {
+        animation: none;
+    }
+}

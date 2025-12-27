@@ -1,4 +1,5 @@
 import './Header.css'
+import ThemeToggle from './ThemeToggle'
 
 function Header() {
     return (
@@ -10,6 +11,7 @@ function Header() {
                         <a href="#projects">Projects</a>
                         <a href="#about">About</a>
                         <a href="#contact">Contact</a>
+                        <ThemeToggle />
                     </div>
                 </nav>
             </div>
